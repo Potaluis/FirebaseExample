@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { auth } from "$lib/firebase";
 	import { signOut } from "firebase/auth";
+	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
 
 	
 	let { drawerButtonKind, drawerPosition }= $props();
@@ -39,7 +40,16 @@
 </script>
 <div class="button-container">
 
-	<button onclick={openDrawer} style="text-align: right">{drawerButtonKind}</button>
+	<button onclick={openDrawer} style="text-align: right">	<Avatar 
+		class="cursor-pointer" 
+		on:click={openDrawer}
+	>
+		<AvatarImage 
+			src="https://github.com/shadcn.png" 
+			alt="User avatar" 
+		/>
+		<AvatarFallback>{drawerButtonKind}</AvatarFallback>
+	</Avatar></button>
 
 </div>
 
