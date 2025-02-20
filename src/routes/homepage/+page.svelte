@@ -3,6 +3,22 @@
     import Drawer from "../../components/drawer.svelte";
     import ProfileDrawer from "../../components/profileDrawer.svelte";
 
+    import { user } from '$lib/stores/auth';
+    import { get } from 'svelte/store';
+    import { redirect } from '@sveltejs/kit';
+
+    export const load = async () => {
+    const currentUser = get(user);
+    
+    if (!currentUser) {
+        throw redirect(303, '/login');
+    }
+
+    return {
+        user: currentUser
+    };
+    };
+
 </script>
 
 <BackgroundPattern>

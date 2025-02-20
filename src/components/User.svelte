@@ -1,10 +1,9 @@
 <script lang="ts">
-    import { auth, type User } from "../firebase";
+    import { auth } from "$lib/firebase";
     import { onAuthStateChanged, signOut } from "firebase/auth";
     import { onMount } from "svelte";
-    import { writable } from "svelte/store";
-  
-    const user = writable<User | null>(null);
+    import { user } from "$lib/stores/auth";
+    import { goto } from "$app/navigation";
   
     onMount(() => {
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -14,8 +13,13 @@
     });
   
     const logout = async () => {
-      await signOut(auth);
-      user.set(null);
+      try {
+        await signOut(auth);
+        user.set(null);
+        goto('/login'); // Redirige a la página de login después del logout
+      } catch (error) {
+        console.error("Error al cerrar sesión:", error);
+      }
     };
   </script>
   

@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { auth } from "../firebase";
-    import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "$lib/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
     import { goto } from "$app/navigation";
 
   
