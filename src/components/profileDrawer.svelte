@@ -2,8 +2,8 @@
 
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { auth } from "../lib/firebase";
-    import { signOut } from "firebase/auth";
+	import { auth } from "$lib/firebase";
+	import { signOut } from "firebase/auth";
 
 	
 	let { drawerButtonKind, drawerPosition }= $props();
