@@ -18,8 +18,8 @@ import { auth } from "$lib/firebase";
     };
   </script>
   
-  <main class="min-h-screen flex items-center justify-center bg-[#1a1a1a]">
-  <div class="w-full max-w-md space-y-6">
+  <main class="min-h-screen min-w-full flex items-center justify-center bg-[#1a1a1a] overflow-hidden">
+    <div class="w-full max-w-md space-y-6 px-4">
 
     <h1 class="text-8xl font-bold text-center text-white mb-8">LOG IN</h1>
 
@@ -38,7 +38,7 @@ import { auth } from "$lib/firebase";
     <button 
     on:click={login} 
     class="w-full px-8 py-3 text-lg font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200">
-    Ingresar</button>
+    Submit</button>
 
     {#if errorMessage}
       <p style="color: red;">{errorMessage}</p>
