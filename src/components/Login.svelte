@@ -1,5 +1,5 @@
 <script lang="ts">
-import { auth } from "$lib/firebase";
+    import { auth } from "$lib/firebase";
     import { signInWithEmailAndPassword } from "firebase/auth";
     import { goto } from "$app/navigation";
 
@@ -11,7 +11,7 @@ import { auth } from "$lib/firebase";
     const login = async () => {
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        await goto('/homepage');
+        await goto('/project');
       } catch (error) {
         errorMessage = "Error in credentials, check email and password!"
       }
