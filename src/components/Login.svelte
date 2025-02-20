@@ -11,7 +11,7 @@
     const login = async () => {
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        await goto('/project');
+        await goto('/homepage');
       } catch (error) {
         errorMessage = "Error in credentials, check email and password!"
       }

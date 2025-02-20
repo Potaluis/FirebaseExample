@@ -12,6 +12,12 @@
     import { Calendar } from "$lib/components/ui/calendar"
     import type { DateValue } from "@internationalized/date";
 
+    import { goto } from "$app/navigation";
+
+    const handleCreateProject = () => {
+        goto('/project');
+    };
+
     let selectedDate: DateValue | undefined = undefined;
 
     export const load = async () => {
@@ -55,7 +61,7 @@
                 <CardDescription class="text-gray-300">Start a new project and bring your ideas to life</CardDescription>
             </CardHeader>
             <CardContent class="flex flex-col items-center justify-center space-y-4">
-                <Button variant="default" class="bg-[#2a2a2a] text-white hover:bg-[#3a3a3a]">
+                <Button variant="default" class="bg-[#2a2a2a] text-white hover:bg-[#3a3a3a]" on:click={handleCreateProject}>
                     Create Project
                 </Button>
             </CardContent>
