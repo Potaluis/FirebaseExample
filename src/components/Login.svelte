@@ -1,6 +1,6 @@
 <script lang="ts">
 import { auth } from "$lib/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+    import { signInWithEmailAndPassword } from "firebase/auth";
     import { goto } from "$app/navigation";
 
   
@@ -28,12 +28,12 @@ import { signInWithEmailAndPassword } from "firebase/auth";
     type="email" 
     bind:value={email} 
     placeholder="Correo electrónico" 
-    class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all" />
+    class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50" />
 
     <input type="password" 
     bind:value={password} 
     placeholder="Contraseña" 
-    class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"/>
+    class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50""/>
 
     <button 
     on:click={login} 
