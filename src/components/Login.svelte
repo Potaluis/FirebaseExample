@@ -33,7 +33,7 @@ import { auth } from "$lib/firebase";
     <input type="password" 
     bind:value={password} 
     placeholder="Contraseña" 
-    class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50""/>
+    class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50"/>
 
     <button 
     on:click={login} 
