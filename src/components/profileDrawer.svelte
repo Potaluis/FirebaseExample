@@ -38,11 +38,12 @@
     };
 	
 </script>
-<div class="button-container">
+<div class="flex justify-end text-[aliceblue] -mt-10 mr-5 flex-row">
 
-	<button onclick={openDrawer} style="text-align: right">	<Avatar 
-		class="cursor-pointer" 
-		on:click={openDrawer}
+	<button onclick={openDrawer} style="text-align: right">	
+		<Avatar 
+			class="cursor-pointer" 
+			on:click={openDrawer}
 	>
 		<AvatarImage 
 			src="https://github.com/shadcn.png" 
@@ -77,14 +78,6 @@
 <!--Taildwind CSS will be after normal CSS-->
 
 <style>
-    .button-container {
-        display: flex;
-        justify-content: flex-end;
-		color: aliceblue;
-		margin-top: -40px;
-		margin-right: 20px;
-		flex-direction: row;
-    }
     sl-drawer::part(base) {
     	color: white;      
     }
