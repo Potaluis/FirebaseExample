@@ -2,6 +2,8 @@
 
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { auth } from "../firebase";
+    import { signOut } from "firebase/auth";
 
 	
 	let { drawerButtonKind, drawerPosition }= $props();
@@ -23,6 +25,16 @@
         drawer?.hide(); 
         goto(path);      
     };
+
+	const logout = async () => {
+        try {
+            await signOut(auth);
+            drawer?.hide();
+            goto('../'); // Redirige a la página de inicio de sesión
+        } catch (error) {
+            console.error("Error logging out:", error);
+        }
+    };
 	
 </script>
 <div class="button-container">
@@ -38,7 +50,7 @@
 		<sl-menu-item value="option-2">Manage Account</sl-menu-item>
 		<sl-menu-item value="option-3">Theme</sl-menu-item>
 		<sl-menu-item value="option-4">Help</sl-menu-item>
-		<sl-menu-item value="option-4" onclick={() => navigateTo('../')}>Logout</sl-menu-item>
+		<sl-menu-item value="option-4" onclick={logout}>Logout</sl-menu-item>
 	</sl-menu>
 	
 </sl-drawer>

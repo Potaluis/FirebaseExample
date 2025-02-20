@@ -4,14 +4,13 @@
     import { onMount } from "svelte";
     import { writable } from "svelte/store";
   
-    // Creamos un store para el usuario
     const user = writable<User | null>(null);
   
     onMount(() => {
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         user.set(currentUser);
       });
-      return () => unsubscribe(); // Limpieza al desmontar el componente
+      return () => unsubscribe();
     });
   
     const logout = async () => {
