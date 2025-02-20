@@ -13,7 +13,7 @@ import { auth } from "$lib/firebase";
         await signInWithEmailAndPassword(auth, email, password);
         await goto('/homepage');
       } catch (error) {
-        errorMessage = (error as Error).message;
+        errorMessage = "Error in credentials, check email and password!"
       }
     };
   </script>
@@ -27,12 +27,12 @@ import { auth } from "$lib/firebase";
     <input 
     type="email" 
     bind:value={email} 
-    placeholder="Correo electrónico" 
+    placeholder="Email 
     class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50" />
 
     <input type="password" 
     bind:value={password} 
-    placeholder="Contraseña" 
+    placeholder="Password" 
     class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50"/>
 
     <button 
