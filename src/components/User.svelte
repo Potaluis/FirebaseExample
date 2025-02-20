@@ -20,10 +20,3 @@
     };
   </script>
   
-  {#if $user}
-    <p>Bienvenido, {$user.email}!</p>
-    <button on:click={logout}>Cerrar sesión</button>
-  {:else}
-    <p>No estás autenticado</p>
-  {/if}
-  
