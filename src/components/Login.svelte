@@ -1,6 +1,8 @@
 <script lang="ts">
     import { auth } from "../firebase";
     import { signInWithEmailAndPassword } from "firebase/auth";
+    import { goto } from "$app/navigation";
+
   
     let email: string = "";
     let password: string = "";
@@ -9,7 +11,7 @@
     const login = async () => {
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        alert("¡Login exitoso!");
+        await goto('/homepage');
       } catch (error) {
         errorMessage = (error as Error).message;
       }
