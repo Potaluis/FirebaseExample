@@ -27,7 +27,7 @@ import { auth } from "$lib/firebase";
     <input 
     type="email" 
     bind:value={email} 
-    placeholder="Email 
+    placeholder="Email"
     class="w-full px-4 py-3 border border-[#DDDDDD] rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all text-amber-50" />
 
     <input type="password" 
